@@ -1,0 +1,80 @@
+/* Page Header Styling */
+.page-header h1 {
+  font-size: 2em;
+  color: #ff5a5a;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/* Event Container Layout */
+.event-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px; /* Space between each frame */
+  padding: 20px;
+}
+
+/* Individual Event Frame */
+.event-frame {
+  flex: 1 1 45%; /* Adjusted size for a larger frame */
+  max-width: 45%; /* Ensure consistency in frame size */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+/* Thumbnail Styling */
+.thumbnail {
+  border: 2px solid #f0f0f0;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  text-align: center;
+  width: 100%;
+}
+
+/* Image Styling: Uniform size for all images */
+.event-image {
+  width: 900%; /* Full width of the container */
+  height: 800px; /* Increased size for all images */
+  object-fit: cover; /* Ensure images fit within their container without distortion */
+  border-radius: 10px; /* Consistent rounded corners */
+}
+
+/* Hover Effect */
+.thumbnail:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Caption Styling */
+.caption h4 {
+  font-size: 1.5em;
+  color: #333;
+  margin-top: 15px;
+}
+
+.caption b {
+  color: #ff5a5a;
+}
+
+/* Button Styling */
+.btn-primary {
+  margin-right: 5px;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-xs {
+  padding: 8px 15px;
+  font-size: 1em;
+}

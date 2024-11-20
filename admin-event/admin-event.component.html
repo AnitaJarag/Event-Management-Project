@@ -1,0 +1,98 @@
+<div class="container mt-4">
+  <h2>Add New Event</h2>
+
+  <!-- Display error message -->
+  <div *ngIf="errordata" class="alert alert-danger mt-3">
+    {{ errordata }}
+  </div>
+
+  <!-- Event form -->
+  <form (ngSubmit)="onSubmit()" #eventForm="ngForm">
+    <div class="form-group">
+      <label for="eventname">Event Name:</label>
+      <input
+        type="text"
+        id="eventname"
+        [(ngModel)]="event.eventname"
+        name="eventname"
+        class="form-control"
+        required
+        #eventname="ngModel"
+      />
+      <div *ngIf="eventname.invalid && eventname.touched" class="text-danger">
+        Event name is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Event Description:</label>
+      <textarea
+        id="description"
+        [(ngModel)]="event.description"
+        name="description"
+        class="form-control"
+        rows="4"
+        required
+        #description="ngModel"
+      ></textarea>
+      <div *ngIf="description.invalid && description.touched" class="text-danger">
+        Event description is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="duration">Event Duration (in hours):</label>
+      <input
+        type="number"
+        id="duration"
+        [(ngModel)]="event.duration"
+        name="duration"
+        class="form-control"
+        required
+        #duration="ngModel"
+      />
+      <div *ngIf="duration.invalid && duration.touched" class="text-danger">
+        Event duration is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="fees">Event Fees:</label>
+      <input
+        type="number"
+        id="fees"
+        [(ngModel)]="event.fees"
+        name="fees"
+        class="form-control"
+        required
+        #fees="ngModel"
+      />
+      <div *ngIf="fees.invalid && fees.touched" class="text-danger">
+        Event fees are required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="eventImages">Upload Event Image:</label>
+      <input
+        type="file"
+        id="eventImages"
+        (change)="onFileSelected($event)"
+        class="form-control"
+        required
+      />
+      <div *ngIf="event.eventImages && event.eventImages.length > 0">
+        <div *ngFor="let image of event.eventImages; let i = index">
+          <img [src]="image.url" alt="Event Image" width="100" />
+          <button type="button" class="btn btn-danger" (click)="removeImage(i)">
+            Remove
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="eventForm.invalid">
+      Submit
+    </button>
+  </form>
+</div>

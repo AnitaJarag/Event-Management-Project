@@ -1,0 +1,34 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  input, textarea {
+    width: 100%;
+  }
+  
+  button {
+    margin-top: 20px;
+  }
+  
+  img {
+    margin-top: 10px;
+  }
+  
+  button[type="submit"]:disabled {
+    background-color: #dcdcdc;
+  }
+  
+  button[type="submit"]:not(:disabled) {
+    background-color: #007bff;
+    color: white;
+  }
+  

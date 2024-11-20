@@ -1,0 +1,9 @@
+/* navbar.component.css */
+
+.bg-body-tertiary {
+    background-color: #f8f9fa !important;
+  }
+  .navbar .nav-link {
+    cursor: pointer; /* Changes the cursor to pointer on hover */
+  }
+  
